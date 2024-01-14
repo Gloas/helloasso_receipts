@@ -1,0 +1,45 @@
+{
+    "name": "your-vendor/helloasso-receipts",
+    "description": "HelloAsso receipts downloader",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": "^8.3",
+        "ext-curl": "*",
+        "ext-mbstring": "*",
+        "ext-xml": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5",
+        "vimeo/psalm": "^5.22",
+        "phpstan/phpstan": "^1.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "lib\\": "lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "platform-check": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit -c tests/phpunit.xml",
+        "analyze": [
+            "psalm",
+            "phpstan analyze"
+        ]
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

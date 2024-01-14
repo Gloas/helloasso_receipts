@@ -1,0 +1,57 @@
+# Dependencies
+/vendor/
+/node_modules/
+/composer.lock
+/package-lock.json
+/yarn.lock
+
+# Environments
+/.env
+/.env.*
+/.phpunit.result.cache
+
+# Cache
+/.cache/
+/.php-cs-fixer.cache
+/.aider*
+
+# Logs and reports
+/storage/logs/*
+/tests/_output/*
+!/tests/_output/.gitkeep
+/coverage/
+/coverage.xml
+/phpunit.xml
+/build/
+
+# CI Artifacts
+artifacts/
+*.phar
+
+# System files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.bak
+*.~*
+*~
+
+# Data files
+*.pdf
+*.csv
+*.xlsx
+/receipts
+
+# Ignore all files in configuration except those with 'example' in name
+configuration/*
+!configuration/*example*
+
+# Development dependencies
+.phpunit/
+.phpunit.result.cache
+.scannerwork/
