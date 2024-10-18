@@ -2,7 +2,7 @@
 class Download_Recieps
 {
     
-o    protected string $_file_path = 'export-paiements.csv';
+    protected string $_file_path = 'export-paiements.csv';
     protected string $_cookie_path = 'cookies.txt';
     protected string $_folder_path = 'recieps/';
     protected string $_download_url = 'https://www.helloasso.com/associations/association-des-parents-d-eleves-de-valleiry/boutiques/%s/paiement-attestation/%s';
