@@ -23,9 +23,15 @@ class Download_Recieps
 
         @mkdir($this->_folder_path, 0777, true);
 
-        $cookie = file_get_contents($this->_cookie_path);
+        if ( !$cookie = file_get_contents($this->_cookie_path))
+        {
+            echo "Fichier cookie.txt vide.\n";
+            exit;
+        }
+
         $context_params = ['http' => ['method' => 'GET',
-                                      'header' => 'Cookie: ' . $cookie]];
+                                      'header' => explode($cookie, '
+')]];
         $this->_context = stream_context_create($context_params);
         array_map(fn($row) => $this->_download($row, $sell_name), $unique_csv);
     }
@@ -37,7 +43,13 @@ class Download_Recieps
         $file_name = $this->_folder_path . basename($row[3].'_'.$row[0]) . '.pdf';
         @unlink($file_name);
         echo 'Téléchargement de ' . $file_name . "\n";
-        @file_put_contents($file_name, file_get_contents($url, false, $this->_context));
+        if ( !$content = file_get_contents($url, false, $this->_context))
+        {
+            echo "vide\n";
+            return;
+        }
+
+        @file_put_contents($file_name, $content);
     }
 }
 
