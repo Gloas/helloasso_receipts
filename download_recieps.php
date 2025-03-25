@@ -3,11 +3,9 @@ class Download_Recieps
 {
     
     protected string $_file_path = 'export-paiements.csv';
-    protected string $_cookie_path = 'cookies.txt';
     protected string $_headers_path = 'headers.txt';
     protected string $_folder_path = 'recieps/';
     protected string $_download_url = 'https://www.helloasso.com/associations/association-des-parents-d-eleves-de-valleiry/boutiques/%s/paiement-attestation/%s';
-    protected $_context;
 
 
     public function __construct(string $sell_name)
@@ -25,10 +23,9 @@ class Download_Recieps
 
         @mkdir($this->_folder_path, 0777, true);
 
-        $cookie = file_get_contents($this->_cookie_path);
         $headers = file_get_contents($this->_headers_path);
 
-        if ( ! $headers && ! $cookie)
+        if ( ! $headers)
         {
             echo "Fichiers headers.txt et cookie.txt vident.\n";
             exit;
@@ -39,15 +36,6 @@ class Download_Recieps
 
         array_pop($headers);
 
-        $headers_param = $headers
-            ? implode("\r\n", $headers)
-            : 'Cookie: ' . $cookie;
-
-        $context_params = ['http' => ['method' => 'GET',
-                                      'header' => $headers_param]];
-
-
-        $this->_context = stream_context_create($context_params);
         array_map(fn($row) => $this->_download($row, $sell_name, $headers), $unique_csv);
     }
 
@@ -58,7 +46,6 @@ class Download_Recieps
         $file_name = $this->_folder_path . basename($row[3].'_'.$row[0]) . '.pdf';
         @unlink($file_name);
         echo 'Téléchargement de ' . $file_name . "\n";
-
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
