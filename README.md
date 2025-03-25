@@ -5,7 +5,7 @@ Déposer le fichier ici avec le nom : export-paiements.csv
 
 Inspecter la requête suivante avec votre navigateur :
 https://www.helloasso.com/associations/"mon-asso"/boutiques/"ma-boutique"/paiement-attestation/"oredr_id"
-Puis copier-coller le contenu du paramêtre Cookie de la requête envoyée lorsque vous télécharger manuellement une facture d'un client ici, dans le fichier cookies.txt
+Puis copier-coller le contenu des HEADERS de la requête envoyée lorsque vous télécharger manuellement une facture d'un client ici, dans le fichier headers.txt
 
 lancer la commande
 php download_recieps.php "ma-boutique"

@@ -1,0 +1,14 @@
+Host: www.helloasso.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:136.0) Gecko/20100101 Firefox/136.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate, br, zstd
+DNT: 1
+Connection: keep-alive
+Cookie: ajs_anonymous_id=c6c7e72e-1cfc-4406-982e-4c5be387851b; ajs_user_id=4963842; axeptio_cookies={%22$$token%22:%22yzcuqkhetb9ovn5laoiz%22%2C%22$$date%22:%222025-03-25T12:50:43.663Z%22%2C%22$$cookiesVersion%22:{}%2C%22$$completed%22:false}; axeptio_authorized_vendors=%2C%2C; axeptio_all_vendors=%2C%2C; tm5-HelloAsso=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiZDRmNjI4NWQ3NTA0NmQ5MjhmZDA4ZGQ2NmM0YzY0OCIsInVpZCI6IjQ5NjM4NDIiLCJ1cnMiOiJPcmdhbml6YXRpb25BZG1pbiIsImNwcyI6WyJBY2Nlc3NGdWxsRGF0YSIsIkFjY2Vzc1B1YmxpY0RhdGEiLCJBY2Nlc3NUcmFuc2FjdGlvbnMiLCJGb3JtQWRtaW5pc3RyYXRpb24iLCJGb3JtRGlyZWN0b3J5IiwiR3JhbnRQYXNzd29yZENyZWRlbnRpYWxzIiwiR3JhbnRTaWduVXAiLCJPcmdhbml6YXRpb25BZG1pbmlzdHJhdGlvbiIsIk9yZ2FuaXphdGlvbk9wZW5EaXJlY3RvcnkiLCJSZWZ1bmRNYW5hZ2VtZW50Il0sIm5iZiI6MTc0MjkwNzA0NSwiZXhwIjoxNzQyOTA4ODQ1LCJpc3MiOiJodHRwczovL2FwaS5oZWxsb2Fzc28uY29tIiwiYXVkIjoiNzAyYzIzNzJkY2RmNDQ2M2JkOWRkZTJjZDU0NjJkZjYifQ.pwJrUcXKLCGyiXVpCsSpda6_mHZmExIF4QtD7nd6ACboApeS-DBVC7jtgCVihAlz9jXg7tTxT4tfT0Z_m6q6_CGfYaPHDwtfKoEABOUcMtNGZZ5HJwwzNowZfJDWqUWTyMHfLZxhgaJiQAu-5L8YcHBE2c_jU-m91OOTFFDi5m1m5BUq8OADME9ej4qiww3zV1scRDlD7eVfPmVMoSROUpOiRQ9HxG34_qfFvcU5hq-VwUWTwvkQsFl4xdA3O_bdcSYRsQvksNWKweVknhLUAUgH11BCednhdJNljLvF6MSE4Rq3Eo68PUHN29t1Sj2T7Vwv8KrrMzr4Fm22iO_bTQ; rm5-HelloAsso=CfDJ8IcbC3jDpHdEksfJ7gw1pNIfIbhjbWPmGI27exDfaCRP-v8naLyvf6uUmimYf9CHx4gGecfcC3yjsPxUPvagluhSL-WQB0JR8KiTs0bVXa2g2WyJOPX7F-W4h96B3l7UzE7QAveFAl2YHlh-3xFpc5K4-_G3p0E4YK_gpNWfX4I9e7RpD_548JA4DD34Kwkk_o9e29JG-2mmlzkXEPUXn-lbTxV8_8hNKyMJ5Ii3Wrp5c3cdxsZ_UHvoj9lyCiT87VmDa8r6rlmBKSuG7vTfNSkFxkNFYu7FUHslmCwYodYnk-RlGOc5pH45npBBxCoXuJnDwcsYbXqFcvjCBbzA30A; sm5-HelloAsso=4.1742908845.4963842; __cf_bm=roYdchh888k306owa.o6QzlRZSsxBKefYBUcD3W94b8-1742926986-1.0.1.1-M.Q0G6A1wiGsux67.0utiepZTUwg_KkfH6DGeJfuUs9P8EnvCzuDebaVcgUmnkPAymMSeSOIRMjzT3xmpcEJamLSkR3DcQ_8E9123C1O.3o
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: cross-site
+Priority: u=0, i
+TE: trailers
