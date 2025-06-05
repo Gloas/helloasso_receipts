@@ -1,4 +1,6 @@
 <?php
+namespace App\Receipts;
+
 class DownloadReceipts
 {
     protected string $_file_path;
@@ -62,16 +64,16 @@ class DownloadReceipts
 
             $response = curl_exec($ch);
             if (curl_errno($ch)) {
-                throw new RuntimeException('Erreur cURL : ' . curl_error($ch));
+                throw new RuntimeException('Erreur Curl : ' . curl_error($ch));
             }
 
             if (@file_put_contents($file_name, $response) === false) {
-                throw new RuntimeException("Échec de l'écriture du fichier $file_name");
+                throw new RuntimeException("Échec d'écriture du fichier $file_name");
             }
 
             return true;
         } catch (RuntimeException $e) {
-            echo $e->getMessage() . "\n";
+            echo "[Erreur] " . $e->getMessage() . "\n";
             return false;
         } finally {
             if (isset($ch)) {

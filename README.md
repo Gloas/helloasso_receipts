@@ -1,13 +1,32 @@
-# helloasso_recieps
-Télécharger la liste des clients de votre boutique au format CSV à l'adresse suivante :  https://admin.helloasso.com/"mon-asso"/boutiques/"ma-boutique"/statistiques
+# Téléchargeur de reçus HelloAsso
 
-Déposer le fichier ici avec le nom : export-paiements.csv
+## Prérequis
+- PHP 8.0 ou supérieur
+- Un compte HelloAsso avec accès administrateur
 
-Inspecter la requête suivante avec votre navigateur :
-https://www.helloasso.com/associations/"mon-asso"/boutiques/"ma-boutique"/paiement-attestation/"oredr_id"
-Puis copier-coller le contenu des HEADERS de la requête envoyée lorsque vous télécharger manuellement une facture d'un client ici, dans le fichier headers.txt
+## Configuration
 
-lancer la commande
-php download_recieps.php "ma-boutique"
+1. **Exporter les données** :
+   - Téléchargez la liste des clients au format CSV depuis :  
+     `https://admin.helloasso.com/mon-asso/boutiques/ma-boutique/statistiques`
+   - Renommez le fichier en `export-paiements.csv` et placez-le à la racine du projet
 
-Consulter les pdf dans le dossier recieps
+2. **Configurer les headers** :
+   - Inspectez cette URL dans votre navigateur :  
+     `https://www.helloasso.com/associations/mon-asso/boutiques/ma-boutique/paiement-attestation/order_id`
+   - Copiez les en-têtes (F12 > Network) dans `headers.txt`
+
+## Utilisation
+
+```bash
+php download_receipts.php "ma-boutique"
+```
+
+Les reçus seront téléchargés dans le dossier `receipts/`.
+
+## Support
+
+Pour tout problème, vérifiez que :
+- Le fichier CSV est correctement formaté
+- Les headers sont à jour
+- Vous avez les permissions d'écriture
