@@ -1,16 +1,13 @@
 <?php
-class Download_Recieps
+class DownloadReceipts
 {
-    
     protected string $_file_path = 'export-paiements.csv';
     protected string $_headers_path = 'headers.txt';
     protected string $_folder_path = 'recieps/';
     protected string $_download_url = 'https://www.helloasso.com/associations/association-des-parents-d-eleves-de-valleiry/boutiques/%s/paiement-attestation/%s';
 
-
     public function __construct(string $sell_name)
     {
-
         $csv_as_array = array_map('str_getcsv', file($this->_file_path));
         array_shift($csv_as_array);
         $csv_as_array = array_map(fn(array $row) => explode(';', reset($row)), $csv_as_array);
@@ -27,18 +24,15 @@ class Download_Recieps
 
         if ( ! $headers)
         {
-            echo "Fichiers headers.txt et cookie.txt vident.\n";
+            echo "Fichiers headers.txt et cookie.txt vides.\n";
             exit;
         }
 
-        $headers = explode('
-', $headers);
-
+        $headers = explode("\n", $headers);
         array_pop($headers);
 
         array_map(fn($row) => $this->_download($row, $sell_name, $headers), $unique_csv);
     }
-
 
     protected function _download(array $row, string $sell_name, array $headers): void
     {
@@ -63,5 +57,3 @@ class Download_Recieps
         @file_put_contents($file_name, $response);
     }
 }
-
-new Download_Recieps($argv[1]);
