@@ -1,15 +1,27 @@
 <?php
 class DownloadReceipts
 {
-    protected string $_file_path = 'export-paiements.csv';
-    protected string $_headers_path = 'headers.txt';
-    protected string $_folder_path = 'recieps/';
+    protected string $_file_path;
+    protected string $_headers_path;
+    protected string $_folder_path;
     protected string $_download_url;
 
-    public function __construct(string $sell_name)
+    public function __construct(string $sell_name, ?string $configPath = null)
     {
-        $config = require __DIR__.'/../config.php';
+        $configPath = $configPath ?? __DIR__.'/../config.php';
+        $config = require $configPath;
+        
+        if (empty($config['file_path']) || !file_exists($config['file_path'])) {
+            throw new RuntimeException("Fichier CSV introuvable: " . ($config['file_path'] ?? ''));
+        }
+        if (empty($config['headers_path']) || !file_exists($config['headers_path'])) {
+            throw new RuntimeException("Fichier headers.txt introuvable");
+        }
+
         $this->_download_url = $config['download_url'];
+        $this->_file_path = $config['file_path'];
+        $this->_headers_path = $config['headers_path'];
+        $this->_folder_path = $config['folder_path'];
         $csv_as_array = array_map('str_getcsv', file($this->_file_path));
         array_shift($csv_as_array);
         $csv_as_array = array_map(fn(array $row) => explode(';', reset($row)), $csv_as_array);
@@ -24,10 +36,8 @@ class DownloadReceipts
 
         $headers = file_get_contents($this->_headers_path);
 
-        if ( ! $headers)
-        {
-            echo "Fichiers headers.txt et cookie.txt vides.\n";
-            exit;
+        if (empty($headers)) {
+            throw new RuntimeException("Fichiers headers.txt et cookie.txt vides");
         }
 
         $headers = explode("\n", $headers);

@@ -1,4 +1,6 @@
 recieps/
+receipts/
+vendor/
 .pdf
 .csv
 .aider*
